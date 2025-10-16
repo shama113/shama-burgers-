@@ -1,94 +1,85 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shama Burgers — Шымкент</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shama Burgers — Шымкент</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            🍔 Shama Burgers
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#menu">Меню</a></li>
-                <li><a href="#reviews">Отзывы</a></li>
-                <li><a href="#register">Регистрация</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="bg-animation"></div>
 
-    <section id="home" class="hero">
-        <h1>Добро пожаловать в <span>Shama Burgers</span>!</h1>
-        <p>Лучшие бургеры Шымкента! 🍔🔥</p>
-        <button class="btn">Посмотреть меню</button>
-    </section>
+  <header>
+    <div class="logo">🍔 Shama Burgers</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#menu">Меню</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#register">Регистрация</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="menu" class="menu">
-        <h2>Наше меню</h2>
-        <div class="menu-items">
-            <div class="item">
-                <h3>Классический бургер</h3>
-                <p>Сочная котлета, сыр, соус и булочка с кунжутом.</p>
-                <span>1990 ₸</span>
-            </div>
-            <div class="item">
-                <h3>Shama Special</h3>
-                <p>Фирменный бургер с двойной котлетой и секретным соусом!</p>
-                <span>2490 ₸</span>
-            </div>
-            <div class="item">
-                <h3>Острый бургер</h3>
-                <p>Для любителей огня — перчик 🌶️ и спецсоус!</p>
-                <span>2290 ₸</span>
-            </div>
-        </div>
-    </section>
+  <section id="home" class="hero">
+    <h1>Добро пожаловать в <span>Shama Burgers</span>!</h1>
+    <p>Лучшие бургеры Шымкента 🍔🔥</p>
+    <button class="btn">Посмотреть меню</button>
+  </section>
 
-    <section id="reviews" class="reviews">
-        <h2>Отзывы клиентов</h2>
-        <div class="review">
-            <p>🔥 Очень вкусно! Самые лучшие бургеры в городе!</p>
-            <span>- Алия</span>
-        </div>
-        <div class="review">
-            <p>🍔 Обслуживание топ! Приду ещё.</p>
-            <span>- Даурен</span>
-        </div>
-        <div class="review">
-            <p>⭐ Всё на уровне, шикарная атмосфера!</p>
-            <span>- Алишер</span>
-        </div>
-    </section>
+  <section id="menu" class="menu">
+    <h2>Наше меню</h2>
+    <div class="menu-items">
+      <div class="item">
+        <h3>Классический бургер</h3>
+        <p>Сочная котлета, сыр, соус и булочка с кунжутом.</p>
+        <span>1990 ₸</span>
+      </div>
+      <div class="item">
+        <h3>Shama Special</h3>
+        <p>Фирменный бургер с двойной котлетой и секретным соусом!</p>
+        <span>2490 ₸</span>
+      </div>
+      <div class="item">
+        <h3>Острый бургер</h3>
+        <p>Для любителей огня — перчик 🌶️ и спецсоус!</p>
+        <span>2290 ₸</span>
+      </div>
+    </div>
+  </section>
 
-    <section id="register" class="register">
-        <h2>Регистрация</h2>
-        <form>
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Пароль" required>
-            <button type="submit">Зарегистрироваться</button>
-        </form>
-    </section>
+  <section id="reviews" class="reviews">
+    <h2>Отзывы клиентов</h2>
+    <div class="review"><p>🔥 Очень вкусно! Лучшие бургеры в городе!</p><span>- Алия</span></div>
+    <div class="review"><p>🍔 Обслуживание топ! Приду ещё.</p><span>- Даурен</span></div>
+    <div class="review"><p>⭐ Шикарная атмосфера и музыка!</p><span>- Алишер</span></div>
+  </section>
 
-    <footer id="contact">
-        <p>📍 Шымкент | 📞 +7 702 507 3828</p>
-        <p>© 2025 Shama Burgers</p>
-    </footer>
+  <section id="register" class="register">
+    <h2>Регистрация</h2>
+    <form>
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Пароль" required>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </section>
 
-    <script>
-        // Анимация появления при скролле
-        const items = document.querySelectorAll('.menu .item, .review');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('show');
-            });
-        });
-        items.forEach(item => observer.observe(item));
-    </script>
+  <footer id="contact">
+    <p>📍 Шымкент | 📞 +7 702 507 3828</p>
+    <p>© 2025 Shama Burgers</p>
+  </footer>
+
+  <script>
+    // Анимация появления при скролле
+    const items = document.querySelectorAll('.menu .item, .review');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    });
+    items.forEach(item => observer.observe(item));
+  </script>
 </body>
 </html>
