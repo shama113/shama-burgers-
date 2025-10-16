@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shama Burgers — Шымкент</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">
+        <!-- simple burger SVG as sticker -->
+        <svg viewBox="0 0 64 64" class="burger-sticker" aria-hidden>
+          <rect x="6" y="10" width="52" height="8" rx="4"/>
+          <rect x="6" y="46" width="52" height="8" rx="4"/>
+          <rect x="8" y="22" width="48" height="22" rx="8"/>
+          <circle cx="20" cy="34" r="2"/>
+          <circle cx="28" cy="34" r="2"/>
+          <circle cx="36" cy="34" r="2"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Shama Burgers</h1>
+        <p class="sub">Шымкент — горячие бургеры и улыбки</p>
+      </div>
+    </div>
+
+    <nav class="top-nav">
+      <a href="#menu">Меню</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#about">О нас</a>
+      <a class="cta" id="openReg">Регистрация</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Лучшие бургеры в Шымкенте</h2>
+        <p>Доставим тепло и хруст прямо к вам. Заказы по номеру <a href="tel:+77025073828">+7 702 507 38 28</a></p>
+        <div class="hero-actions">
+          <a class="btn" href="#menu">Посмотреть меню</a>
+          <a class="btn ghost" href="#reviews">Отзывы</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <!-- animated burger card composed of CSS + SVG stickers -->
+        <div class="floating-sticker">🍔</div>
+        <div class="burger-card">
+          <svg viewBox="0 0 200 200" class="big-burger" aria-hidden>
+            <g transform="translate(100,100)">
+              <ellipse cx="0" cy="-55" rx="70" ry="22" class="bun-top"/>
+              <rect x="-60" y="-30" width="120" height="18" rx="6" class="cheese"/>
+              <rect x="-64" y="-14" width="128" height="28" rx="8" class="patty"/>
+              <ellipse cx="0" cy="60" rx="70" ry="18" class="bun-bot"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <h3 class="section-title">Меню</h3>
+      <div class="menu-grid">
+        <!-- menu item cards -->
+        <article class="menu-item">
+          <div class="sticker">🔥</div>
+          <h4>Shama Classic</h4>
+          <p class="desc">Говяжья котлета, сыр, салат, фирменный соус</p>
+          <div class="meta">₸ 1 900</div>
+          <button class="add">Заказать</button>
+        </article>
+
+        <article class="menu-item">
+          <div class="sticker">🧀</div>
+          <h4>Cheese Lover</h4>
+          <p class="desc">Три вида сыра, карамелизированный лук</p>
+          <div class="meta">₸ 2 200</div>
+          <button class="add">Заказать</button>
+        </article>
+
+        <article class="menu-item">
+          <div class="sticker">🌶️</div>
+          <h4>Spicy Shama</h4>
+          <p class="desc">Острая котлета и халапеньо</p>
+          <div class="meta">₸ 2 000</div>
+          <button class="add">Заказать</button>
+        </article>
+
+        <article class="menu-item">
+          <div class="sticker">🥗</div>
+          <h4>Veggie Bite</h4>
+          <p class="desc">Овощная котлета, свежие овощи</p>
+          <div class="meta">₸ 1 700</div>
+          <button class="add">Заказать</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <h3 class="section-title">Отзывы наших клиентов</h3>
+      <div class="review-slider">
+        <div class="review-track">
+          <blockquote class="review">«Самый вкусный бургер в городе! Быстрая доставка, горячо пришло.»<cite>— Айдана</cite></blockquote>
+          <blockquote class="review">«Цена/качество — на уровне. Рекомендую Shama Classic.»<cite>— Руслан</cite></blockquote>
+          <blockquote class="review">«Дети в восторге от стикеров и коробок, оформление крутое.»<cite>— Гаухар</cite></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h3 class="section-title">О нас</h3>
+      <p>Shama Burgers — семейная бургерная в центре Шымкента. Мы используем свежие продукты и любим экспериментировать с вкусами.</p>
+      <div class="contact-card">
+        <div>Адрес: Шымкент</div>
+        <div>Телефон: <a href="tel:+77025073828">+7 702 507 38 28</a></div>
+        <div>График: 10:00 — 23:00</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© Shama Burgers — Шымкент</div>
+    <div class="socials">Ссылка на WhatsApp: <a href="https://wa.me/77025073828" target="_blank">Написать</a></div>
+  </footer>
+
+  <!-- Registration modal (JS-controlled) -->
+  <div id="regModal" class="modal" aria-hidden>
+    <div class="modal-panel">
+      <button class="close" id="closeReg">✕</button>
+      <h4>Регистрация — Shama Burgers</h4>
+      <form id="regForm">
+        <label>Имя<input name="name" required></label>
+        <label>Телефон<input name="phone" required placeholder="+7..." type="tel"></label>
+        <label>Email<input name="email" type="email" placeholder="example@mail.com"></label>
+        <div class="actions">
+          <button type="submit" class="btn">Зарегистрироваться</button>
+          <button type="button" class="btn ghost" id="closeReg2">Отмена</button>
+        </div>
+        <p class="note">Регистрация — только для уведомлений и скидок. Никаких паролей.</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Simple interactive bits (no backend) — open/close modal & fake register
+    const open = document.getElementById('openReg');
+    const modal = document.getElementById('regModal');
+    const close = document.getElementById('closeReg');
+    const close2 = document.getElementById('closeReg2');
+    const form = document.getElementById('regForm');
+
+    function showModal(){ modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); }
+    function hideModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
+
+    open && open.addEventListener('click', showModal);
+    close && close.addEventListener('click', hideModal);
+    close2 && close2.addEventListener('click', hideModal);
+    modal && modal.addEventListener('click', (e)=>{ if(e.target===modal) hideModal(); });
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = new FormData(form);
+      // mimic success
+      form.innerHTML = '<p class="success">Спасибо, '+ (data.get('name') || 'гость') + '! Мы свяжемся по телефону '+ (data.get('phone') || '') +'.</p>';
+      setTimeout(hideModal, 2200);
+    });
+
+    // tiny review slider animation (CSS handled), but let's loop reviews using JS-driven translate
+    const track = document.querySelector('.review-track');
+    if(track){
+      let idx=0; const blocks = track.children.length;
+      setInterval(()=>{ idx = (idx+1)%blocks; track.style.transform = `translateX(-${idx*100}%)`; }, 3500);
+    }
+  </script>
+</body>
+</html>
