@@ -10,25 +10,7 @@
   <header class="site-header">
     <div class="brand">
       <svg class="burger-logo" viewBox="0 0 64 64">
-        <circle cx="32" cy="32" r="30" fill="url(#grad)" />
-        <g filter="url(#glow)">
-          <rect x="12" y="22" width="40" height="6" rx="3" fill="#ffb347"/>
-          <rect x="12" y="30" width="40" height="6" rx="3" fill="#8b4513"/>
-          <rect x="12" y="38" width="40" height="6" rx="3" fill="#ffb347"/>
-        </g>
-        <defs>
-          <radialGradient id="grad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#ff7b47"/>
-            <stop offset="100%" stop-color="#ff6b35"/>
-          </radialGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
+        <use href="#icon-burger"></use>
       </svg>
       <div>
         <h1>Shama Burgers</h1>
@@ -39,6 +21,7 @@
       <a href="#menu">Меню</a>
       <a href="#reviews">Отзывы</a>
       <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
       <a href="#register" class="cta">Регистрация</a>
     </nav>
   </header>
@@ -96,8 +79,23 @@
   <section id="about" class="about fade-up">
     <h3 class="section-title">О нас</h3>
     <p>Shama Burgers — это место, где вкус и качество стоят на первом месте. Мы используем только свежие продукты и собственные рецепты.</p>
-    <div class="contact-card">
-      📞 <b>Связаться:</b> 87025073828
+  </section>
+
+  <section id="contacts" class="contacts fade-up">
+    <h3 class="section-title">Контакты</h3>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <svg class="icon"><use href="#icon-phone"></use></svg>
+        <span>Телефон: 87025073828</span>
+      </div>
+      <div class="contact-item">
+        <svg class="icon"><use href="#icon-location"></use></svg>
+        <span>Адрес: г. Шымкент, пр. Тауке хана 45</span>
+      </div>
+      <div class="contact-item">
+        <svg class="icon"><use href="#icon-mail"></use></svg>
+        <span>Email: info@shamaburgers.kz</span>
+      </div>
     </div>
   </section>
 
@@ -106,17 +104,32 @@
     <p>Сделано с ❤️ специально для любителей бургеров</p>
   </footer>
 
+  <!-- SVG Sprite -->
+  <svg style="display:none">
+    <symbol id="icon-burger" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" fill="#ff7b47" />
+      <rect x="12" y="22" width="40" height="6" rx="3" fill="#ffb347"/>
+      <rect x="12" y="30" width="40" height="6" rx="3" fill="#8b4513"/>
+      <rect x="12" y="38" width="40" height="6" rx="3" fill="#ffb347"/>
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path d="M6.6 10.8a15.05 15.05 0 006.6 6.6l2.2-2.2a1 1 0 011.1-.2 11.36 11.36 0 003.6.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.4a1 1 0 011 1 11.36 11.36 0 00.6 3.6 1 1 0 01-.2 1.1z"/>
+    </symbol>
+    <symbol id="icon-location" viewBox="0 0 24 24">
+      <path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 9.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16z"/>
+    </symbol>
+  </svg>
+
   <script>
-    // Плавное появление при скролле
     const elements = document.querySelectorAll('.fade-up, .fade-in');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.2 });
     elements.forEach(el => observer.observe(el));
 
-    // Отзывы автоматический слайдер
     const track = document.querySelector('.review-track');
     let index = 0;
     setInterval(() => {
