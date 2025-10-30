@@ -42,6 +42,7 @@
 
     <nav class="top-nav">
       <a href="#menu">🍔 Меню</a>
+      <a href="#slider">🥤 Комбо</a>
       <a href="#promo">🎁 Акции</a>
       <a href="#reviews">💬 Отзывы</a>
       <a href="#about">🏠 О нас</a>
@@ -54,6 +55,7 @@
     <button id="closeMenu" class="close-menu" aria-label="Закрыть меню">✕</button>
     <ul class="fullscreen-list">
       <li><a href="#menu" class="fs-link">🍔 Меню</a></li>
+      <li><a href="#slider" class="fs-link">🥤 Комбо</a></li>
       <li><a href="#promo" class="fs-link">🎁 Акции</a></li>
       <li><a href="#reviews" class="fs-link">💬 Отзывы</a></li>
       <li><a href="#about" class="fs-link">🏠 О нас</a></li>
@@ -69,7 +71,8 @@
       <a href="#promo" class="btn ghost">Смотреть акции</a>
     </div>
     <div class="hero-right">
-      <div class="burger-3d" aria-hidden="true"></div>
+      <!-- фон-изображение через CSS + доп. карточка -->
+      <div class="hero-photo" role="img" aria-label="Фото бургера"></div>
     </div>
   </section>
 
@@ -78,38 +81,81 @@
     <div class="menu-grid">
       <div class="menu-item">
         <div class="sticker animate">🍔</div>
+        <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1606756791922-3b5a0c0f4c20?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=9a5f5272e7e0e3b2c2b9f8f7b5d6b3a4');" aria-hidden="true"></div>
         <h4>Shama Classic</h4>
         <p>Классический бургер с говядиной и фирменным соусом</p>
         <p class="meta">2500 ₸</p>
         <button class="add">Добавить</button>
       </div>
+
       <div class="menu-item">
         <div class="sticker animate">🔥</div>
+        <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1604917877936-5f0aef8b9f2e?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=d8d50b3c2e7b6d4f0c4fb57e2f8f0a3f');" aria-hidden="true"></div>
         <h4>Hot Burger</h4>
         <p>Острый бургер с перцем чили и хрустящей булочкой</p>
         <p class="meta">2800 ₸</p>
         <button class="add">Добавить</button>
       </div>
+
       <div class="menu-item">
         <div class="sticker animate">🧀</div>
+        <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=b27b0b2c8f5f8d9a9f3f6e4f2f6a7c3a');" aria-hidden="true"></div>
         <h4>Cheese Burger</h4>
         <p>Двойная порция сыра и сочная котлета</p>
         <p class="meta">2700 ₸</p>
+        <button class="add">Добавить</button>
+      </div>
+
+      <!-- Доп. два комбо-карточки (в меню) -->
+      <div class="menu-item combo-item">
+        <div class="sticker">🥤</div>
+        <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1551782450-a2132b4ba21d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=7b801e1f6c4e9e8b1c4f2c2a7d4b5c2b');" aria-hidden="true"></div>
+        <h4>Комбо «Друзья»</h4>
+        <p>3 бургера + 3 напитка — отличная экономия для компании</p>
+        <p class="meta">7400 ₸</p>
+        <button class="add">Добавить</button>
+      </div>
+
+      <div class="menu-item combo-item">
+        <div class="sticker">🍟</div>
+        <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1532634896-26909d0d3b4b?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8d4a7f2c1e3b3a4c5d6f7a8b9c0d1e2f');" aria-hidden="true"></div>
+        <h4>Комбо «Семейное»</h4>
+        <p>2 больших бургера + картошка + 2 напитка</p>
+        <p class="meta">5200 ₸</p>
         <button class="add">Добавить</button>
       </div>
     </div>
   </section>
 
   <section id="slider" class="slider-section fade-up">
-    <h3 class="section-title">Комбо </h3>
+    <h3 class="section-title">🥤 Комбо</h3>
     <div class="simple-slider">
       <div class="slides">
-        <div class="slide active">
-          <h4>Комбо «Друзья»</h4>
-          <p>3 бургера + 3 напитка = 15% скидка!</p>
+        <div class="slide active combo-slide">
+          <div class="slide-inner">
+            <h4>Комбо «Друзья»</h4>
+            <p>3 бургера + 3 напитка = 15% скидка!</p>
+            <button class="add small">Добавить</button>
+          </div>
         </div>
-        <!-- при необходимости можно копировать .slide -->
+
+        <div class="slide combo-slide">
+          <div class="slide-inner">
+            <h4>Комбо «Семья»</h4>
+            <p>2 больших бургера + картошка + 2 напитка — выгодно!</p>
+            <button class="add small">Добавить</button>
+          </div>
+        </div>
+
+        <div class="slide combo-slide">
+          <div class="slide-inner">
+            <h4>Комбо «Острый»</h4>
+            <p>Hot Burger + острые крылышки + напиток — для смелых</p>
+            <button class="add small">Добавить</button>
+          </div>
+        </div>
       </div>
+
       <div class="slider-controls">
         <button id="prevSlide" class="small">◀</button>
         <button id="nextSlide" class="small">▶</button>
@@ -231,6 +277,27 @@
     <p>Сделано с ❤️ специально для любителей бургеров</p>
   </footer>
 
+  <!-- Corner hotspot + slide-out panel (в правом верхнем углу) -->
+  <div class="corner">
+    <div class="corner-hotspot" aria-hidden="true" title="Открыть панель заказов/регистрации"></div>
+    <aside class="slide-out" aria-hidden="true">
+      <button class="close-panel" aria-label="Закрыть панель">✕</button>
+      <div class="panel-inner">
+        <h4>Заказы / Вход</h4>
+        <p>Быстрая панель — оставь номер или войди в аккаунт.</p>
+
+        <form id="miniOrder" class="mini-form" novalidate>
+          <label>Телефон <input type="tel" name="miniPhone" required placeholder="+7 702 000 0000"></label>
+          <label>Имя <input type="text" name="miniName" placeholder="Имя"></label>
+          <div class="panel-actions">
+            <button type="submit" class="btn small">Отправить</button>
+            <button type="button" class="btn ghost small">Войти</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </div>
+
   <!-- Sparks canvas (bottom) -->
   <canvas id="sparks"></canvas>
 
@@ -273,14 +340,14 @@
         document.body.style.overflow = '';
       }
 
-      btn.addEventListener('click', openMenu);
-      closeBtn.addEventListener('click', closeMenuFn);
+      if (btn) btn.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenuFn);
       fsLinks.forEach(a => a.addEventListener('click', closeMenuFn));
       // Close menu on Escape
       window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenuFn(); });
     })();
 
-    /* ====== Simple slider (single slide demo) ====== */
+    /* ====== Simple slider (multiple slides) ====== */
     (function() {
       const slides = document.querySelectorAll('.simple-slider .slide');
       let cur = 0;
@@ -288,11 +355,13 @@
         slides.forEach(s => s.classList.remove('active'));
         if (slides[i]) slides[i].classList.add('active');
       }
-      document.getElementById('prevSlide').addEventListener('click', () => {
+      const prevBtn = document.getElementById('prevSlide');
+      const nextBtn = document.getElementById('nextSlide');
+      if (prevBtn) prevBtn.addEventListener('click', () => {
         cur = (cur - 1 + slides.length) % slides.length;
         show(cur);
       });
-      document.getElementById('nextSlide').addEventListener('click', () => {
+      if (nextBtn) nextBtn.addEventListener('click', () => {
         cur = (cur + 1) % slides.length;
         show(cur);
       });
@@ -389,7 +458,7 @@
         document.body.style.overflow = '';
       }
 
-      modalClose.addEventListener('click', closeModal);
+      if (modalClose) modalClose.addEventListener('click', closeModal);
       modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
       window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
@@ -398,70 +467,67 @@
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       }
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const name = form.name.value.trim();
-        const phone = form.phone.value.trim();
-        const to = form.to.value.trim();
-        const comment = form.comment.value.trim();
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const name = form.name.value.trim();
+          const phone = form.phone.value.trim();
+          const to = form.to.value.trim();
+          const comment = form.comment.value.trim();
 
-        if (!name || !phone || !to) {
-          openModal('Ошибка', 'Пожалуйста, заполните поля: имя, телефон и email.');
-          return;
-        }
-        if (!validateEmail(to)) {
-          openModal('Ошибка', 'Пожалуйста, введите корректный email.');
-          return;
-        }
+          if (!name || !phone || !to) {
+            openModal('Ошибка', 'Пожалуйста, заполните поля: имя, телефон и email.');
+            return;
+          }
+          if (!validateEmail(to)) {
+            openModal('Ошибка', 'Пожалуйста, введите корректный email.');
+            return;
+          }
 
-        const payload = { name, phone, comment, to };
+          const payload = { name, phone, comment, to };
 
-        // Try to send to real server. If network/CORS fails, emulate a random response.
-        const endpoint = 'https://webdev-api.loftschool.com/sendmail';
-        let usedEmulation = false;
-        try {
-          const controller = new AbortController();
-          const timeout = setTimeout(() => controller.abort(), 8000);
-          const resp = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-            signal: controller.signal
-          });
-          clearTimeout(timeout);
+          // Try to send to real server. If network/CORS fails, emulate a random response.
+          const endpoint = 'https://webdev-api.loftschool.com/sendmail';
+          let usedEmulation = false;
+          try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 8000);
+            const resp = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+              signal: controller.signal
+            });
+            clearTimeout(timeout);
 
-          // If server responds with JSON
-          if (resp.ok) {
-            const data = await resp.json();
-            // server expected to return { status: 'OK' / 'ERROR' , message: '...' }
-            if (data && (data.status === 'OK' || data.status === 'success' || data.status === true)) {
-              openModal('Успех', data.message || 'Ваш заказ принят. Спасибо!');
-              form.reset();
-              return;
+            if (resp.ok) {
+              const data = await resp.json();
+              if (data && (data.status === 'OK' || data.status === 'success' || data.status === true)) {
+                openModal('Успех', data.message || 'Ваш заказ принят. Спасибо!');
+                form.reset();
+                return;
+              } else {
+                openModal('Ошибка', data && data.message ? data.message : 'Произошла ошибка на сервере.');
+                return;
+              }
             } else {
-              openModal('Ошибка', data && data.message ? data.message : 'Произошла ошибка на сервере.');
-              return;
+              usedEmulation = true;
             }
-          } else {
-            // Non-200 — emulate
+          } catch (err) {
             usedEmulation = true;
           }
-        } catch (err) {
-          // network / CORS / timeout
-          usedEmulation = true;
-        }
 
-        // Эмуляция (сервер возвращает случайно успех или ошибку)
-        if (usedEmulation) {
-          const ok = Math.random() > 0.4; // ~60% success
-          if (ok) {
-            openModal('Успех (эмуляция)', 'Эмуляция: заказ успешно отправлен. Спасибо!');
-            form.reset();
-          } else {
-            openModal('Ошибка (эмуляция)', 'Эмуляция: произошла ошибка при отправке. Попробуйте позже.');
+          if (usedEmulation) {
+            const ok = Math.random() > 0.4;
+            if (ok) {
+              openModal('Успех (эмуляция)', 'Эмуляция: заказ успешно отправлен. Спасибо!');
+              form.reset();
+            } else {
+              openModal('Ошибка (эмуляция)', 'Эмуляция: произошла ошибка при отправке. Попробуйте позже.');
+            }
           }
-        }
-      });
+        });
+      }
     })();
 
     /* ====== Sparks canvas (unchanged logic) ====== */
@@ -506,6 +572,39 @@
         requestAnimationFrame(animate);
       }
       animate();
+    })();
+
+    /* ====== Mini slide-out panel behavior (close button) ====== */
+    (function() {
+      const corner = document.querySelector('.corner');
+      const panel = document.querySelector('.slide-out');
+      const close = document.querySelector('.close-panel');
+
+      // Close button inside panel (also hides by pointer events)
+      if (close) {
+        close.addEventListener('click', (e) => {
+          e.stopPropagation();
+          panel.classList.add('closed-by-btn');
+          // временно спрячем, чтобы пользователь мог снова навести в угол
+          setTimeout(() => panel.classList.remove('closed-by-btn'), 300);
+        });
+      }
+
+      // Отправка мини-формы
+      const miniForm = document.getElementById('miniOrder');
+      if (miniForm) {
+        miniForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const phone = miniForm.miniPhone.value.trim();
+          if (!phone) {
+            alert('Введите телефон');
+            return;
+          }
+          // Эмуляция отправки
+          alert('Спасибо! Мы свяжемся с вами по номеру ' + phone);
+          miniForm.reset();
+        });
+      }
     })();
   </script>
 </body>
