@@ -150,8 +150,7 @@ body {
   height: 100%;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  /* атмосферное фото стола — тёплые тона */
-  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop');
+  background-image: url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=b27b0b2c8f5f8d9a9f3f6e4f2f6a7c3a');
   background-size: cover;
   background-position: center;
   transform: translateY(-8px);
@@ -225,8 +224,7 @@ body {
   background-size: cover;
   background-position: center;
   margin-bottom: 0.8rem;
-  transition: transform 0.36s ease, filter 0.36s ease, box-shadow 0.36s ease;
-  box-shadow: inset 0 -20px 50px rgba(0,0,0,0.25);
+  transition: transform 0.36s ease, filter 0.36s ease;
 }
 .menu-item:hover .menu-photo { transform: scale(1.03) translateY(-4px); filter: brightness(1.02); }
 
@@ -298,27 +296,11 @@ body {
   border-radius: 0.8rem;
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1rem;
-  align-items: center;
 }
-.slide.active { display: grid; transform: translateY(0); }
+.slide.active { display: block; transform: translateY(0); }
 .combo-slide { border-left: 4px solid rgba(255,123,71,0.12); }
 .slide-inner h4 { margin: 0 0 0.4rem 0; color: var(--accent2); }
 .slide-inner p { margin: 0 0.8rem 0 0; color: rgba(255,255,255,0.9); }
-
-/* Slide photo */
-.slide-photo {
-  width: 140px;
-  height: 100px;
-  border-radius: 8px;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.6);
-  transition: transform 0.28s;
-}
-.slide:hover .slide-photo { transform: scale(1.03) translateY(-6px); }
 
 /* on hover make combo slide pop */
 .slide:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 24px 60px rgba(0,0,0,0.6); }
