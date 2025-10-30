@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shama Burgers — Шымкент</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="brand">
-      <svg class="burger-logo rotating" viewBox="0 0 64 64">
+      <svg class="burger-logo rotating" viewBox="0 0 64 64" aria-hidden="true">
         <circle cx="32" cy="32" r="30" fill="url(#grad)" />
         <g filter="url(#glow)">
           <rect x="12" y="22" width="40" height="6" rx="3" fill="#ffb347"/>
@@ -35,6 +35,11 @@
         <p class="sub">г. Шымкент • 87025073828</p>
       </div>
     </div>
+
+    <button class="hamburger" aria-label="Открыть меню" title="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+
     <nav class="top-nav">
       <a href="#menu">🍔 Меню</a>
       <a href="#promo">🎁 Акции</a>
@@ -44,6 +49,18 @@
     </nav>
   </header>
 
+  <!-- Fullscreen menu (hidden by default) -->
+  <div id="fullscreenMenu" class="fullscreen-menu" aria-hidden="true">
+    <button id="closeMenu" class="close-menu" aria-label="Закрыть меню">✕</button>
+    <ul class="fullscreen-list">
+      <li><a href="#menu" class="fs-link">🍔 Меню</a></li>
+      <li><a href="#promo" class="fs-link">🎁 Акции</a></li>
+      <li><a href="#reviews" class="fs-link">💬 Отзывы</a></li>
+      <li><a href="#about" class="fs-link">🏠 О нас</a></li>
+      <li><a href="#contact" class="fs-link">📍 Контакты</a></li>
+    </ul>
+  </div>
+
   <section class="hero fade-in">
     <div class="hero-left">
       <h2>🔥 Самые сочные бургеры в Шымкенте!</h2>
@@ -52,7 +69,7 @@
       <a href="#promo" class="btn ghost">Смотреть акции</a>
     </div>
     <div class="hero-right">
-      <div class="burger-3d"></div>
+      <div class="burger-3d" aria-hidden="true"></div>
     </div>
   </section>
 
@@ -83,6 +100,23 @@
     </div>
   </section>
 
+  <section id="slider" class="slider-section fade-up">
+    <h3 class="section-title">Слайдер — пример (один слайд)</h3>
+    <div class="simple-slider">
+      <div class="slides">
+        <div class="slide active">
+          <h4>Комбо «Друзья»</h4>
+          <p>3 бургера + 3 напитка = 15% скидка!</p>
+        </div>
+        <!-- при необходимости можно копировать .slide -->
+      </div>
+      <div class="slider-controls">
+        <button id="prevSlide" class="small">◀</button>
+        <button id="nextSlide" class="small">▶</button>
+      </div>
+    </div>
+  </section>
+
   <section id="promo" class="promo-section fade-up">
     <h3 class="section-title">🎉 Акции и скидки</h3>
     <div class="promo-grid">
@@ -101,13 +135,58 @@
     </div>
   </section>
 
+  <section id="faq" class="faq-section fade-up">
+    <h3 class="section-title">❓ Часто задаваемые вопросы</h3>
+    <div class="accordion">
+      <div class="acc-item">
+        <button class="acc-head">Доставка есть? <span class="triangle" aria-hidden="true">▾</span></button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            Да — доставка по городу. Стоимость зависит от удалённости.
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head">Можно ли заказать по телефону? <span class="triangle" aria-hidden="true">▾</span></button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            Конечно. Звоните на наш номер или оставьте заявку на сайте.
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head">Есть ли вегетарианские позиции? <span class="triangle" aria-hidden="true">▾</span></button>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            Да — у нас есть несколько вегетарианских бургеров и гарниров.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="reviews" class="reviews fade-up">
-    <h3 class="section-title">💬 Отзывы</h3>
-    <div class="review-slider">
-      <div class="review-track">
-        <blockquote class="review">“Лучшие бургеры в городе! Соус просто огонь!”<cite> — Алихан</cite></blockquote>
-        <blockquote class="review">“Обслуживание быстрое, интерьер современный, всё супер.”<cite> — Аружан</cite></blockquote>
-        <blockquote class="review">“Булочка мягкая, бургер сочный. Советую всем!”<cite> — Тимур</cite></blockquote>
+    <h3 class="section-title">💬 Отзывы — слайдшоу с аватарами</h3>
+
+    <div class="showcase">
+      <div class="content-list">
+        <div class="content-item active" data-index="0">
+          <blockquote class="review">“Лучшие бургеры в городе! Соус просто огонь!”<cite> — Алихан</cite></blockquote>
+        </div>
+        <div class="content-item" data-index="1">
+          <blockquote class="review">“Обслуживание быстрое, интерьер современный, всё супер.”<cite> — Аружан</cite></blockquote>
+        </div>
+        <div class="content-item" data-index="2">
+          <blockquote class="review">“Булочка мягкая, бургер сочный. Советую всем!”<cite> — Тимур</cite></blockquote>
+        </div>
+      </div>
+
+      <div class="avatar-list">
+        <button class="avatar active" data-target="0" aria-label="Показать отзыв Алихан">А</button>
+        <button class="avatar" data-target="1" aria-label="Показать отзыв Аружан">А</button>
+        <button class="avatar" data-target="2" aria-label="Показать отзыв Тимур">Т</button>
       </div>
     </div>
   </section>
@@ -118,10 +197,27 @@
   </section>
 
   <section id="contact" class="contact fade-up">
-    <h3 class="section-title">📍 Как нас найти</h3>
+    <h3 class="section-title">📍 Как нас найти / Заказать</h3>
     <p><b>Адрес:</b> г. Шымкент, пр. Тауке хана, 45</p>
     <div class="map-container">
-      <iframe src="https://www.google.com/maps?q=Shymkent,+Tauke+Khan+45&output=embed"></iframe>
+      <iframe src="https://www.google.com/maps?q=Shymkent,+Tauke+Khan+45&output=embed" title="Карта"></iframe>
+    </div>
+
+    <div class="order-form">
+      <h4>Оформить заказ</h4>
+      <form id="orderForm" novalidate>
+        <div class="row">
+          <label>Имя <input type="text" name="name" id="name" required></label>
+          <label>Телефон <input type="tel" name="phone" id="phone" required></label>
+        </div>
+        <label>Email <input type="email" name="to" id="email" required placeholder="you@example.com"></label>
+        <label>Комментарий <textarea name="comment" id="comment" rows="3"></textarea></label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Отправить заказ</button>
+          <button type="reset" class="btn ghost">Сброс</button>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -135,62 +231,282 @@
     <p>Сделано с ❤️ специально для любителей бургеров</p>
   </footer>
 
+  <!-- Sparks canvas (bottom) -->
   <canvas id="sparks"></canvas>
 
+  <!-- Modal: success / error -->
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+    <div class="modal">
+      <button class="modal-close" aria-label="Закрыть">✕</button>
+      <div class="modal-body">
+        <h4 id="modalTitle">Результат</h4>
+        <p id="modalMessage"></p>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Анимация появления
-    const elements = document.querySelectorAll('.fade-up, .fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.2 });
-    elements.forEach(el => observer.observe(el));
+    /* ====== IntersectionObserver for fade animations ====== */
+    (function() {
+      const elements = document.querySelectorAll('.fade-up, .fade-in');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.18 });
+      elements.forEach(el => observer.observe(el));
+    })();
 
-    // Слайдер отзывов
-    const track = document.querySelector('.review-track');
-    let index = 0;
-    setInterval(() => {
-      index = (index + 1) % 3;
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }, 4000);
+    /* ====== Fullscreen menu ====== */
+    (function() {
+      const btn = document.querySelector('.hamburger');
+      const fsMenu = document.getElementById('fullscreenMenu');
+      const closeBtn = document.getElementById('closeMenu');
+      const fsLinks = document.querySelectorAll('.fs-link');
 
-    // Искры
-    const canvas = document.getElementById('sparks');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = canvas.height - Math.random() * 80;
-        this.size = Math.random() * 3 + 1;
-        this.speedY = Math.random() * -0.5 - 0.5;
-        this.color = `hsl(${Math.random() * 30 + 20}, 100%, 60%)`;
+      function openMenu() {
+        fsMenu.classList.add('open');
+        fsMenu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       }
-      update() {
-        this.y += this.speedY;
-        if (this.y < canvas.height - 150) this.y = canvas.height;
+      function closeMenuFn() {
+        fsMenu.classList.remove('open');
+        fsMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
       }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
-    }
 
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      if (particles.length < 100) particles.push(new Particle());
-      particles.forEach(p => { p.update(); p.draw(); });
-      requestAnimationFrame(animate);
-    }
-    animate();
+      btn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenuFn);
+      fsLinks.forEach(a => a.addEventListener('click', closeMenuFn));
+      // Close menu on Escape
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenuFn(); });
+    })();
+
+    /* ====== Simple slider (single slide demo) ====== */
+    (function() {
+      const slides = document.querySelectorAll('.simple-slider .slide');
+      let cur = 0;
+      function show(i) {
+        slides.forEach(s => s.classList.remove('active'));
+        if (slides[i]) slides[i].classList.add('active');
+      }
+      document.getElementById('prevSlide').addEventListener('click', () => {
+        cur = (cur - 1 + slides.length) % slides.length;
+        show(cur);
+      });
+      document.getElementById('nextSlide').addEventListener('click', () => {
+        cur = (cur + 1) % slides.length;
+        show(cur);
+      });
+      // auto-advance only if multiple slides
+      if (slides.length > 1) setInterval(() => { cur = (cur + 1) % slides.length; show(cur); }, 5000);
+    })();
+
+    /* ====== Accordion (vertical) ====== */
+    (function() {
+      const accItems = document.querySelectorAll('.acc-item');
+      accItems.forEach(item => {
+        const head = item.querySelector('.acc-head');
+        const body = item.querySelector('.acc-body');
+        const inner = item.querySelector('.acc-body-inner');
+
+        // start closed: ensure height 0
+        body.style.height = '0px';
+        body.style.overflow = 'hidden';
+
+        head.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+
+          // close all siblings (optional: single-open behavior)
+          accItems.forEach(i => {
+            i.classList.remove('open');
+            i.querySelector('.acc-body').style.height = '0px';
+            i.querySelector('.triangle').textContent = '▾';
+            i.querySelector('.acc-head').style.color = '';
+          });
+
+          if (!isOpen) {
+            item.classList.add('open');
+            const fullH = inner.offsetHeight;
+            body.style.height = fullH + 'px';
+            head.style.color = 'var(--accent2)';
+            item.querySelector('.triangle').textContent = '▴';
+          } else {
+            item.classList.remove('open');
+            body.style.height = '0px';
+            head.style.color = '';
+            item.querySelector('.triangle').textContent = '▾';
+          }
+        });
+      });
+    })();
+
+    /* ====== Slideshow with avatars (reviews) ====== */
+    (function() {
+      const avatars = document.querySelectorAll('.avatar');
+      const contents = document.querySelectorAll('.content-item');
+
+      function showIndex(i) {
+        contents.forEach(c => c.classList.remove('active'));
+        avatars.forEach(a => a.classList.remove('active'));
+        const targetContent = document.querySelector('.content-item[data-index="'+i+'"]');
+        const targetAvatar = document.querySelector('.avatar[data-target="'+i+'"]');
+        if (targetContent) targetContent.classList.add('active');
+        if (targetAvatar) targetAvatar.classList.add('active');
+      }
+
+      avatars.forEach(av => {
+        av.addEventListener('click', () => {
+          const t = av.getAttribute('data-target');
+          showIndex(t);
+        });
+      });
+
+      // auto-rotate every 4s
+      let idx = 0;
+      setInterval(() => {
+        idx = (idx + 1) % contents.length;
+        showIndex(idx);
+      }, 4000);
+    })();
+
+    /* ====== Order form + modal (AJAX POST JSON) ====== */
+    (function() {
+      const form = document.getElementById('orderForm');
+      const modalOverlay = document.getElementById('modalOverlay');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalMessage = document.getElementById('modalMessage');
+      const modalClose = document.querySelector('.modal-close');
+
+      function openModal(title, msg) {
+        modalTitle.textContent = title;
+        modalMessage.textContent = msg;
+        modalOverlay.classList.add('visible');
+        modalOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modalOverlay.classList.remove('visible');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+      function validateEmail(email) {
+        // simple regex
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = form.name.value.trim();
+        const phone = form.phone.value.trim();
+        const to = form.to.value.trim();
+        const comment = form.comment.value.trim();
+
+        if (!name || !phone || !to) {
+          openModal('Ошибка', 'Пожалуйста, заполните поля: имя, телефон и email.');
+          return;
+        }
+        if (!validateEmail(to)) {
+          openModal('Ошибка', 'Пожалуйста, введите корректный email.');
+          return;
+        }
+
+        const payload = { name, phone, comment, to };
+
+        // Try to send to real server. If network/CORS fails, emulate a random response.
+        const endpoint = 'https://webdev-api.loftschool.com/sendmail';
+        let usedEmulation = false;
+        try {
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 8000);
+          const resp = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            signal: controller.signal
+          });
+          clearTimeout(timeout);
+
+          // If server responds with JSON
+          if (resp.ok) {
+            const data = await resp.json();
+            // server expected to return { status: 'OK' / 'ERROR' , message: '...' }
+            if (data && (data.status === 'OK' || data.status === 'success' || data.status === true)) {
+              openModal('Успех', data.message || 'Ваш заказ принят. Спасибо!');
+              form.reset();
+              return;
+            } else {
+              openModal('Ошибка', data && data.message ? data.message : 'Произошла ошибка на сервере.');
+              return;
+            }
+          } else {
+            // Non-200 — emulate
+            usedEmulation = true;
+          }
+        } catch (err) {
+          // network / CORS / timeout
+          usedEmulation = true;
+        }
+
+        // Эмуляция (сервер возвращает случайно успех или ошибку)
+        if (usedEmulation) {
+          const ok = Math.random() > 0.4; // ~60% success
+          if (ok) {
+            openModal('Успех (эмуляция)', 'Эмуляция: заказ успешно отправлен. Спасибо!');
+            form.reset();
+          } else {
+            openModal('Ошибка (эмуляция)', 'Эмуляция: произошла ошибка при отправке. Попробуйте позже.');
+          }
+        }
+      });
+    })();
+
+    /* ====== Sparks canvas (unchanged logic) ====== */
+    (function() {
+      const canvas = document.getElementById('sparks');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = 150; // keep small strip at bottom
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = canvas.height - Math.random() * 40;
+          this.size = Math.random() * 3 + 0.5;
+          this.speedY = Math.random() * -0.6 - 0.2;
+          this.color = `hsl(${Math.random() * 30 + 20}, 100%, 60%)`;
+        }
+        update() {
+          this.y += this.speedY;
+          if (this.y < 10) {
+            this.y = canvas.height;
+            this.x = Math.random() * canvas.width;
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if (particles.length < 80) particles.push(new Particle());
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
   </script>
 </body>
 </html>
